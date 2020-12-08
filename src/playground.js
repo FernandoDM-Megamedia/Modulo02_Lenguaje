@@ -105,31 +105,6 @@ console.log("* CONCAT *******************************");
 */
 // definimos un array
 
-
-// console.log(array01 + "\n" + array02);
-// console.log( array01.concat(array02));
-// console.log([...array01, ...array02]);
-
-
-// const concat = ( ...concatArr ) => concatArr ;
-// Duda .-
-// (8) ["a", "b", "c", "d", "e", "f", "g", "h"]0: "a"1: "b"2: "c"3: "d"4: "e"5: "f"6: "g"7: "h"length: 8__proto__: Array(0)
-// playground.js:125 [Array(20)]
-
-// const concat = ( [...concatArr] ) => concatArr ;
-
-// console.log(concat( [...array01 , ...array02, ...array03, ...array04, ...array05] ));
-
-// hacerlo de otra forma *************************************** <------ revisar esto
-// con  -> reduce <-
-
-
-// var integrado = [array01, array05].reduce(function(a,b) {
-//   return a.concat(b);
-// }, []);
-
-// cons integrado = ( ...argumentosArr ) => ( argumentosArr.reduce(function(a,b)));
-
 const array01 = ["a", "b", "c", "d"];
 const array02 = ["e", "f", "g", "h"];
 const array03 = ["i", "j", "k", "l"];
@@ -171,9 +146,6 @@ console.log("* CLONE *******************************");
 // objeto .-
 // propiedades copiadas no copìa en profundida o plus a profundidad ( recursiva )
 const obj = { one: 1, two: 2 };
-
-// duda .- 
-// const obj2 = obj;
 
 function clone(source) {
   return { ...source };
@@ -251,33 +223,6 @@ const books = [
 ];
 
 function isBookRead(books, titleToSearch) {
-  
-  // lengthBooks = books.length;
-
-  // for(i= 0; i< lengthBooks; i++ ) {
-  //   if (books[i].title == titleToSearch) {
-  //     isReadBook = books[i].isRead;
-  //     break;
-  //   } else {
-  //     isReadBook = books[i].isRead;
-  //   }
-  // }
-
-  // console.log("--- buscamos .- " + titleToSearch );
-  // for ( i = 0; i < books.length ; i++) {
-  //   if (books[i].title.includes(titleToSearch)) {
-  //     return books[i].isRead;
-  //   } else if ( typeof books[i].title.includes(titleToSearch) != "undefined" ){
-  //      if (books.length < i+1) {
-  //       isBookRead(books, books[i+1].title);
-  //      }
-  //   }
-  // }
-  // return false;
-  
-  // probar con find()
-  // corrección con tutoria .-
-  // return books.find(book => book.title === titleToSearch && book.isRead) ? true : false ;
   const bookRead = books.find(book => book.title === titleToSearch && book.isRead);
   return Boolean(bookRead);
 }
